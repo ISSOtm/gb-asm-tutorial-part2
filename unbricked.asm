@@ -7,10 +7,6 @@ SECTION "Header", ROM0[$100]
 	ds $150 - @, 0 ; Make room for the header
 
 EntryPoint:
-	; Shut down audio circuitry
-	ld a, 0
-	ld [rNR52], a
-
 	; Do not turn the LCD off outside of VBlank
 WaitVBlank:
 	ld a, [rLY]
